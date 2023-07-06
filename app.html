@@ -14,6 +14,11 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-timepicker/0.5.2/css/bootstrap-timepicker.min.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -57,7 +62,7 @@
 
         <!-- Botón para calcular desfase -->
         <div class="form-group text-end">
-            <button class="btn btn-primary" onclick="calcularDiferencia()">Calcular desfase</button>
+            <button class="btn btn-outline-primary" onclick="calcularDiferencia()">Calcular desfase</button>
         </div>
 
         <div class="result">
@@ -66,7 +71,7 @@
         </div>
 
         <!-- Sección cálculo hora DVR -->
-        <button class="btn btn-primary" onclick="mostrarIngresoHoraOficial()">Hora DVR</button>
+        <button class="btn btn-outline-warning" onclick="mostrarIngresoHoraOficial()">Hora DVR</button>
 
         <div id="ingresoHoraOficial" style="display: none;">
             <div class="form-group">
@@ -80,12 +85,12 @@
                     placeholder="HH:mm:ss" autocomplete="off">
             </div>
 
-            <button class="btn btn-primary" onclick="calcularNuevaHoraDvr()">Calcular Hora DVR</button>
+            <button class="btn btn-outline-info" onclick="calcularNuevaHoraDvr()">Calcular Hora DVR</button>
             <p id="nuevoResultado"></p>
         </div>
-        
+
         <!-- Sección cálculo hora oficial -->
-        <button class="btn btn-primary" onclick="mostrarCalcularHoraOficial()">Hora Oficial</button>
+        <button class="btn btn-outline-warning" onclick="mostrarCalcularHoraOficial()">Hora Oficial</button>
 
         <div id="calcularHoraOficial" style="display: none;">
             <div class="form-group">
@@ -99,12 +104,12 @@
                     placeholder="HH:mm:ss" autocomplete="off">
             </div>
 
-            <button class="btn btn-primary" onclick="calcularHoraOficial()">Calcular Hora Oficial</button>
+            <button class="btn btn-outline-info" onclick="calcularHoraOficial()">Calcular Hora Oficial</button>
             <p id="horaOficialResultado"></p>
         </div>
 
         <div class="form-group text-end">
-            <button class="btn btn-danger" onclick="cerrarSesion()">Cerrar sesión</button>
+            <button class="btn btn-outline-danger btn-sm" onclick="cerrarSesion()">Cerrar sesión</button>
         </div>
 
 </body>
