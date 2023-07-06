@@ -289,49 +289,42 @@
 }
 
 .footer {
-    background-image: url(img/tec3.jpg);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    color: #fff;
-    text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: justify;
+    background: #010101;
+    background: radial-gradient(at left center, #010101, #27A730);
+    color: white;
     font-size: 14px;
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-family: 'Share Tech Mono', monospace;
+    border-radius: 90px 0px 0px 90px;
+    -webkit-border-radius: 90px 0px 0px 90px;
+    -moz-border-radius: 90px 0px 0px 90px;
+    -ms-border-radius: 90px 0px 0px 90px;
+    -o-border-radius: 90px 0px 0px 90px;
+    overflow: hidden;
+    background: linear-gradient(to right, #161917, #006b40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .footer img {
     width: 100px;
     height: 100px;
-    margin-right: 5px;
+    margin-right: 20px;
     align-items: start;
+    margin-left: 1px;;
+
 }
 
-.footer img:hover {
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
+
+.footer p {
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 0 0 1em rgb(163, 163, 164), 0 0 0.2em rgb(255, 255, 255);
+    margin: 0;
 }
 
-.footer {
-    overflow: hidden;
-}
-
-/*footer*/
-
-.footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-radius: 90px 0px 0px 90px;    
-    text-align: center;
-    text-shadow: 1px 1px 2px black;
-    -webkit-border-radius: 90px 0px 0px 90px;
-    -moz-border-radius: 90px 0px 0px 90px;
-    -ms-border-radius: 90px 0px 0px 90px;
-    -o-border-radius: 90px 0px 0px 90px;
-}
 
 .message {
     margin-top: 40px;
@@ -341,8 +334,9 @@
 
 
 body {
-    font-family: 'Alegreya Sans SC', sans-serif;
-    font-family: 'Share Tech Mono', monospace;
+    font-family: 'Roboto Condensed', sans-serif;
+    /*font-family: 'Alegreya Sans SC', sans-serif;
+    font-family: 'Share Tech Mono', monospace;*/
     background: rgb(0, 0, 0);
     background: linear-gradient(163deg, rgba(0, 0, 0, 1) 0%, rgba(33, 65, 33, 1) 48%, rgba(0, 0, 0, 1) 100%);
     display: flex;
