@@ -106,7 +106,7 @@ function calcularDiferencia() {
   var segundos = Math.abs(diferenciaTotal.seconds());
 
   // Mostrar el resultado
-  var resultado =
+  var resultado1 =
     "El desfase de horario es: <span class='difference'>" +
     anos +
     " años, " +
@@ -131,9 +131,11 @@ function calcularDiferencia() {
     mensaje = "Sin desfase de horario";
   }
 
-  document.getElementById("resultado").innerHTML = resultado;
+  document.getElementById("resultado").innerHTML = resultado1;
   document.getElementById("mensaje").innerHTML = mensaje;
 }
+
+
 
 function mostrarIngresoHoraOficial() {
   document.getElementById("ingresoHoraOficial").style.display = "block";
@@ -161,12 +163,12 @@ function calcularNuevaHoraDvr() {
     nuevaFechaHoraDvr = nuevaFechaHoraOficial.clone().add(diferenciaTotalSegundos, 'seconds');
   }
 
-  var resultado =
+  var resultado2 =
     "La hora para buscar en DVR es: <span class='difference'>" +
     nuevaFechaHoraDvr.format("DD/MM/YYYY HH:mm:ss") +
     "</span>";
 
-  document.getElementById("nuevoResultado").innerHTML = resultado;
+  document.getElementById("nuevoResultado").innerHTML = resultado2;
 }
 
 function mostrarCalcularHoraOficial() {
@@ -204,36 +206,47 @@ function calcularDesfase(fechaDvr, horaDvr) {
   return resultado;
 }
 
+var fechaOficial = document.getElementById("fechaOficial").value;
+var horaOficial = document.getElementById("horaOficial").value;
+
 function calcularHoraOficial() {
   var fechaDvr = document.getElementById("fechaDvrCalculo").value;
   var horaDvr = document.getElementById("horaDvrCalculo").value;
   var fechaHoraDvr = moment(`${fechaDvr} ${horaDvr}`, "DD/MM/YYYY HH:mm:ss");
 
   var resultado = document.getElementById("resultado").textContent;
-  var desfase = resultado.match(/(\d+) horas, (\d+) minutos y (\d+) segundos/);
+  var desfase = resultado.match(/(\d+) años, (\d+) meses, (\d+) días, (\d+) horas, (\d+) minutos y (\d+) segundos/);
   if (!desfase) {
     // Mostrar un mensaje de error o realizar alguna otra acción
     return;
   }
-  var desfaseHoras = parseInt(desfase[1]);
-  var desfaseMinutos = parseInt(desfase[2]);
-  var desfaseSegundos = parseInt(desfase[3]);
+  var anos = parseInt(desfase[1]);
+  var meses = parseInt(desfase[2]);
+  var dias = parseInt(desfase[3]);
+  var horas = parseInt(desfase[4]);
+  var minutos = parseInt(desfase[5]);
+  var segundos = parseInt(desfase[6]);
 
-  // Almacenar la hora oficial original
-  var horaOficialOriginal = moment(`${fechaOficial} ${horaOficial}`, "DD/MM/YYYY HH:mm:ss");
+  // Almacenar la fecha y hora oficial original
+  var fechaHoraOficialOriginal = moment(`${fechaOficial} ${horaOficial}`, "DD/MM/YYYY HH:mm:ss");
 
-  // Agregar el desfase a la hora del DVR
-  var fechaHoraOficial = fechaHoraDvr.clone().add(desfaseHoras, 'hours').add(desfaseMinutos, 'minutes').add(desfaseSegundos, 'seconds');
+  // Aplicar el desfase de tiempo a la fecha y hora del DVR
+  var fechaHoraOficial = fechaHoraDvr
+    .clone()
+    .add(anos, 'years')
+    .add(meses, 'months')
+    .add(dias, 'days')
+    .add(horas, 'hours')
+    .add(minutos, 'minutes')
+    .add(segundos, 'seconds');
 
-  var resultado =
+  var resultado2 =
     "La hora oficial es: <span class='difference'>" +
     fechaHoraOficial.format("DD/MM/YYYY HH:mm:ss") +
     "</span>";
 
-  document.getElementById("horaOficialResultado").innerHTML = resultado;
-
-
-
-  calcularDiferencia();
+  var horaOficialResultado = document.getElementById("horaOficialResultado");
+  horaOficialResultado.innerHTML = resultado2;
 }
+
 
