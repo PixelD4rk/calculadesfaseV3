@@ -163,7 +163,7 @@
 .login-box form button {
     position: relative;
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     color: #03e9f4;
     font-size: 12px;
     text-decoration: none;
@@ -282,15 +282,13 @@
 }
 
 .footer {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    text-align: justify;
-    background: #010101;
-    background: radial-gradient(at left center, #010101, #27A730);
+    text-align: justify;    
     color: white;
-    font-size: 14px;
+    font-size: 1rem;
     border-radius: 90px 0px 0px 90px;
     -webkit-border-radius: 90px 0px 0px 90px;
     -moz-border-radius: 90px 0px 0px 90px;
@@ -309,8 +307,6 @@
     margin-right: 20px;
     align-items: start;
     margin-left: 1px;
-    ;
-
 }
 
 
