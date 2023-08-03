@@ -50,7 +50,7 @@
 
         <!-- Selección de fecha y hora oficial -->
         <div class="form-group">
-            <label for="fechaOficial">Seleccione fecha ACTUAL</label>
+            <label for="fechaOficial">Seleccione fecha OFICIAL</label>
             <input type="text" id="fechaOficial" name="Fecha oficial" class="form-control" placeholder="dd/mm/yyyy">
         </div>
 
@@ -71,7 +71,7 @@
         </div>
 
         <!-- Sección cálculo hora DVR -->
-        <button class="btn btn-outline-warning" onclick="mostrarIngresoHoraOficial()">HORA DVR</button>
+        <button class="btn btn-outline-warning" onclick="mostrarIngresoHoraOficial()">Hora DVR (Etapa 1)</button>
 
         <div id="ingresoHoraOficial" style="display: none;">
             <div class="form-group">
@@ -89,28 +89,29 @@
             <p id="nuevoResultado"></p>
         </div>
 
-        <!-- Sección cálculo hora oficial -->
-        <button class="btn btn-outline-warning" onclick="mostrarCalcularHoraOficial()">HORA OFICIAL</button>
+        <!-- Tercer bloque -->
+        <button class="btn btn-outline-warning" onclick="mostrarIngresoHoraOficial2()">Hora OFICIAL (Etapa 2)</button>
 
-        <div id="calcularHoraOficial" style="display: none;">
+        <div id="ingresoHoraOficial2" style="display: none;">
             <div class="form-group">
-                <label for="fechaDvrCalculo">Seleccione fecha del DVR:</label>
-                <input type="text" id="fechaDvrCalculo" class="form-control" placeholder="dd/mm/yyyy">
+                <label for="nuevaFecha2">Seleccione fecha del DVR:</label>
+                <input type="text" id="nuevaFecha2" class="form-control datepicker" placeholder="dd/mm/yyyy">
             </div>
 
             <div class="form-group">
-                <label for="horaDvrCalculo">Ingrese hora DVR:</label>
-                <input type="text" id="horaDvrCalculo" name="Hora DVR" class="form-control timepicker"
+                <label for="nuevaHoraOficial2">Ingrese hora DVR</label>
+                <input type="text" id="nuevaHoraOficial2" name="Nueva Hora oficial" class="form-control timepicker"
                     placeholder="HH:mm:ss" autocomplete="off">
             </div>
 
-            <button class="btn btn-outline-info" onclick="calcularHoraOficial()">Calcular Hora Oficial</button>
-            <p id="horaOficialResultado"></p>
+            <button class="btn btn-outline-info" onclick="calcularNuevaHora2()">Calcular Hora OFICIAL</button>
+            <p id="nuevoResultado2"></p>
         </div>
 
         <div class="form-group text-end">
             <button class="btn btn-outline-danger btn-sm" onclick="cerrarSesion()">Cerrar sesión</button>
         </div>
+
 
 </body>
 
