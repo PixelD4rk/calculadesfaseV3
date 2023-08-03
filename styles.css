@@ -282,7 +282,7 @@
 }
 
 .footer {
-    position: fixed;
+    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -299,6 +299,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .footer img {
@@ -428,4 +430,9 @@ h1 {
 
 #mensaje {
     font-style: italic;
+}
+
+/* Estilos para el botón "Cerrar sesión" */
+.btn-cerrar-sesion {
+    margin-top: 20px;
 }
